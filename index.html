@@ -8,89 +8,232 @@
         <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body>
+<body class="body">
         <div class="container">
-                <nav class="nav">
-                        <img class="nav__logo-img" src="images/Briar Sticker.png" alt="Briar Logo">
-                        <ul class="nav__list">
-                                <li class="nav__item"><a href="#historia">Historia</a></li>
-                                <li class="nav__item"><a href="#habilidades">Habilidades</a></li>
-                                <li class="nav__item"><a href="#galeria">Galería</a></li>
-                        </ul>
-                </nav>
 
 
-
-                <div class="abilities-container">
-                        <h2>Habilidades de Briar</h2>
-                        <div class="ability">
-                            <div class="ability-info">
-                                <h3>Pasiva - Maldición carmesí</h3>
-                                <p>
-                                    Briar obtiene curación adicional según la vida que le falte. Además, sus ataques y habilidades aplican acumulaciones de sangrado durante un breve periodo de tiempo. El sangrado inflige daño físico según la cantidad de acumulaciones y cura a Briar un porcentaje del daño premitigado. Briar no tiene regeneración de vida básica y sus habilidades le cuestan vida.
-                                </p>
-                            </div>
-                            <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_P1.webm" controls></video>
+                <header>
+                        <div class="logo" id="top">
+                                <img class="logo-img" src="images/BriarSticker.webp" alt="Briar Logo">
                         </div>
 
+                        <!-- Nav -->
+                        <nav class="nav">
+                                <ul class="nav__list">
+                                        <li class="nav__item"><a href="#historia">Historia</a></li>
+                                        <li class="nav__item"><a href="#habilidades">Habilidades</a></li>
+                                        <li class="nav__item"><a href="#galeria">Galería</a></li>
+                                </ul>
+                        </nav>
+                        <!-- Nav -->
+                </header>
 
 
 
-                        <div class="ability">
-                            <div class="ability-info">
-                                <h3>Q - A la yugular</h3>
-                                <p>
-                                    Briar se abalanza contra su objetivo, lo aturde durante un breve periodo, le inflige daño físico y reduce su armadura. Briar dejará de priorizar a campeones si lanza esta habilidad contra un súbdito o monstruo durante Frenesí sanguinario.
-                                </p>
-                            </div>
-                            <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_Q1.webm" controls></video>
+                <!-- Sección Parallax -->
+                <div class="parallax">
+                        <div class="parallax-text">
+                                <h1 class="parallax__title">EL HAMBRE CONTENIDA</h1>
+                                <h2 class="parallax__subtitle">BRIAR</h2>
                         </div>
-
-
-
-
-                        <div class="ability">
-                            <div class="ability-info">
-                                <h3>W - Frenesí sanguinario</h3>
-                                <p>
-                                    Briar salta a una ubicación y entra en un estado de Frenesí sanguinario, provocándose a sí misma para atacar al enemigo más cercano (priorizando a los campeones) durante un tiempo. Mientras dure Frenesí sanguinario, obtiene velocidad de ataque y velocidad de movimiento. Además, sus ataques infligen daño físico en torno al objetivo principal. Briar puede reactivar esta habilidad para potenciar su siguiente ataque. Inflige daño físico según la vida que le falte y se cura un gran porcentaje del daño infligido.
-                                </p>
-                            </div>
-                            <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_W1.webm" controls></video>
-                        </div>
-
-
-
-
-                        <div class="ability">
-                            <div class="ability-info">
-                                <h3>E - Alarido escalofriante</h3>
-                                <p>
-                                    Inicio de la carga: Briar se deshace de Frenesí sanguinario y reúne energía, lo que reduce el daño que recibe y recupera vida. Lanzamiento: Briar emite un alarido que inflige daño según el tiempo de carga y ralentiza durante un breve periodo. Con la carga al máximo, el alarido empuja, lo que inflige daño adicional a los enemigos golpeados que choquen contra un muro y los aturde.
-                                </p>
-                            </div>
-                            <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_E1.webm" controls></video>
-                        </div>
-
-
-
-
-                        <div class="ability">
-                            <div class="ability-info">
-                                <h3>R - Final sangriento</h3>
-                                <p>
-                                    Briar lanza un hemolito y salta hasta la ubicación del primer campeón golpeado, lo que lo marca y lo convierte en su presa. Al aterrizar, inflige una gran cantidad de daño físico a quienes haya cerca y hace que los enemigos huyan. Entra en un Frenesí sanguinario potenciado y persigue a su presa hasta que uno de los dos muera. Durante dicho periodo, obtiene armadura, resistencia mágica y velocidad de movimiento adicional.
-                                </p>
-                            </div>
-                            <video src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_R1.webm" controls></video>
-                        </div>
-
-
-
-                        
-                    </div>
                 </div>
-        </div>
-</body>
+                <!-- Sección Parallax -->
 
-</html>
+
+
+                <main class="container-main background-sangre">
+
+
+
+
+                        <div class="background-cover">
+
+
+
+                                <!-- Historia -->
+                                <section class="historia" id="historia">
+                                        <div class="historia-container">
+                                                <h2 class="historia__title">Historia de Briar</h2>
+                                                <p class="historia__text">
+                                                        Hacia el final de su reinado, el general Boram Darkwill encargó
+                                                        a la Rosa Negra y su legión de hemomantes la creación de un arma viviente, única en su tipo.
+                                                        A diferencia de los experimentos anteriores realizados en cadáveres, esta nueva criatura nacería 
+                                                        de la sangre misma, alimentándose de ella y desarrollando un instinto de caza inagotable.
+                                                </p>
+                                                <p class="historia__text">
+                                                        Así fue como nació <strong>Briar</strong>, una <em>asesina</em> creada para cumplir una
+                                                        misión, pero cuyo apetito insaciable la llevó a un primer intento desastroso y sangriento.
+                                                        Reconociendo el peligro que representaba, la <abbr title="Rosa Negra">RN</abbr> decidió
+                                                        mantenerla viva pero controlada, inventando un cepo especial
+                                                        cerrado con una gema de hemolito que calmaba su mente.
+                                                </p>
+                                                <p class="historia__text">
+                                                        Durante el golpe de Jericho Swain contra Darkwill, <strong>Briar</strong> fue liberada
+                                                        momentáneamente del cepo por su encargado, pero en lugar de seguir órdenes, devoró a todos a
+                                                        su alrededor, menos a Swain, quien logró escapar. Finalmente, los guardias de Swain lograron
+                                                        recapturarla y devolverla a su prisión.
+                                                </p>
+                                                <img class="historia-img" src="images/Celdas.webp" alt="Celdas">
+                                                <p class="historia__text">
+                                                        En la soledad de su celda, <strong>Briar</strong> luchaba contra el <em>hambre</em>,
+                                                        debilitándose sin sangre fresca. Las voces de otros prisioneros, que clamaban por sangre, la
+                                                        atormentaban, pero pronto descubrió que la monotonía de sus lamentos era aún más torturante
+                                                        que la falta de comida.
+                                                </p>
+                                                <p class="historia__text">
+                                                        Con el tiempo, <strong>Briar</strong> comenzó a reflexionar sobre su situación y su deseo de
+                                                        equilibrio entre estar bajo control y estar libre. Un día, al jugar con el cepo, descubrió
+                                                        cómo aflojar el hemolito y, aprovechando la distracción de los guardias, logró escapar.
+                                                </p>
+                                                <p class="historia__text">
+                                                        Ahora libre, <strong>Briar</strong> explora las calles de Noxus con su cepo aún cerrado,
+                                                        pero con la libertad de abrirlo cuando desee. Mientras se adapta al mundo exterior bajo la vigilancia de la <abbr title="Rosa Negra">RN</abbr>,
+                                                        <strong>Briar</strong> aprende y descubre nuevas facetas de la vida que tanto anhelaba experimentar.
+                                                </p>
+                                                <img class="historia-img" src="images/Frenetica.webp" alt="Celdas">
+                                        </div>
+                                </section>
+                                <!-- Historia -->
+
+
+
+
+
+                                <!-- Habilidades -->
+                                <section class="abilities-container" id="habilidades">
+                                        <h2 class="abilities-title">Habilidades de Briar</h2>
+
+                                        <div class="ability">
+                                                <div class="ability-info">
+                                                        <h3>Pasiva - Maldición carmesí</h3>
+                                                        <img class="ability__image" src="https://static.bigbrain.gg/assets/lol/riot_static/14.16.1/img/passive/BriarP.webp" alt="Pasiva de Briar">
+                                                        <p class="ability__description">
+                                                                Briar obtiene curación adicional según la vida que le falte. Además, sus ataques y habilidades aplican acumulaciones de sangrado durante un breve periodo de tiempo. El sangrado inflige daño físico según la cantidad de acumulaciones y cura a Briar un porcentaje del daño premitigado. Briar no tiene regeneración de vida básica y sus habilidades le cuestan vida.
+                                                        </p>
+                                                </div>
+                                                <video class="ability__video" src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_P1.webm" controls></video>
+                                        </div>
+
+
+
+
+                                        <div class="ability">
+                                                <div class="ability-info">
+                                                        <h3>Q - A la yugular</h3>
+                                                        <img class="ability__image" src="https://static.bigbrain.gg/assets/lol/riot_static/14.16.1/img/spell/BriarQ.webp" alt="Pasiva de Briar">
+                                                        <p class="ability__description">
+                                                                Briar se abalanza contra su objetivo, lo aturde durante un breve periodo, le inflige daño físico y reduce su armadura. Briar dejará de priorizar a campeones si lanza esta habilidad contra un súbdito o monstruo durante Frenesí sanguinario.
+                                                        </p>
+                                                </div>
+                                                <video class="ability__video" src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_Q1.webm" controls></video>
+                                        </div>
+
+
+
+
+                                        <div class="ability">
+                                                <div class="ability-info">
+                                                        <h3>W - Frenesí sanguinario</h3>
+                                                        <img class="ability__image" src="https://static.bigbrain.gg/assets/lol/riot_static/14.16.1/img/spell/BriarW.webp" alt="Pasiva de Briar">
+                                                        <p class="ability__description">
+                                                                Briar salta a una ubicación y entra en un estado de Frenesí sanguinario, provocándose a sí misma para atacar al enemigo más cercano (priorizando a los campeones) durante un tiempo. Mientras dure Frenesí sanguinario, obtiene velocidad de ataque y velocidad de movimiento. Además, sus ataques infligen daño físico en torno al objetivo principal. Briar puede reactivar esta habilidad para potenciar su siguiente ataque. Inflige daño físico según la vida que le falte y se cura un gran porcentaje del daño infligido.
+                                                        </p>
+                                                </div>
+                                                <video class="ability__video" src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_W1.webm" controls></video>
+                                        </div>
+
+
+
+
+                                        <div class="ability">
+                                                <div class="ability-info">
+                                                        <h3>E - Alarido escalofriante</h3>
+                                                        <img class="ability__image" src="https://static.bigbrain.gg/assets/lol/riot_static/14.16.1/img/spell/BriarE.webp" alt="Pasiva de Briar">
+                                                        <p class="ability__description">
+                                                                Inicio de la carga: Briar se deshace de Frenesí sanguinario y reúne energía, lo que reduce el daño que recibe y recupera vida. Lanzamiento: Briar emite un alarido que inflige daño según el tiempo de carga y ralentiza durante un breve periodo. Con la carga al máximo, el alarido empuja, lo que inflige daño adicional a los enemigos golpeados que choquen contra un muro y los aturde.
+                                                        </p>
+                                                </div>
+                                                <video class="ability__video" src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_E1.webm" controls></video>
+                                        </div>
+
+
+
+
+                                        <div class="ability">
+                                                <div class="ability-info">
+                                                        <h3>R - Final sangriento</h3>
+                                                        <img class="ability__image" src="https://static.bigbrain.gg/assets/lol/riot_static/14.16.1/img/spell/BriarR.webp" alt="Pasiva de Briar">
+                                                        <p class="ability__description">
+                                                                Briar lanza un hemolito y salta hasta la ubicación del primer campeón golpeado, lo que lo marca y lo convierte en su presa. Al aterrizar, inflige una gran cantidad de daño físico a quienes haya cerca y hace que los enemigos huyan. Entra en un Frenesí sanguinario potenciado y persigue a su presa hasta que uno de los dos muera. Durante dicho periodo, obtiene armadura, resistencia mágica y velocidad de movimiento adicional.
+                                                        </p>
+                                                </div>
+                                                <video class="ability__video" src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0233/ability_0233_R1.webm" controls></video>
+                                        </div>
+                                </section>
+                                <!-- Habilidades -->
+
+
+
+
+
+
+
+
+                                <!-- Galeria -->
+                                <section class="galeria" id="galeria">
+
+                                        <h2 class="galeria__title">Galería de Skins de Briar</h2>
+
+                                        <div class="galeria-container">
+
+                                                <div class="galeria-item">
+                                                        <img class="galeria__image" src="images/BriarSkinbase.webp" alt="Skin base de Briar">
+                                                        <p class="galeria__description">Skin Base</p>
+                                                </div>
+
+
+                                                <div class="galeria-item">
+                                                        <img class="galeria__image" src="images/BriarDemoniosCallejeros.webp" alt="Skin Demonios Callejeros">
+                                                        <p class="galeria__description">Skin Demonios Callejeros
+                                                        </p>
+                                                </div>
+
+
+                                                <div class="galeria-item">
+                                                        <img class="galeria__image" src="images/BriarEscuadronAnimalia.webp" alt="Skin Escuadrón Animalia">
+                                                        <p class="galeria__description">Skin Escuadrón Animalia
+                                                        </p>
+                                                </div>
+                                        </div>
+
+
+
+
+
+                                </section>
+                        </div>
+                </main>
+
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+                <div class="footer__data">
+                        <img src="images/FotoCara.webp" alt="Foto mia" class="footer__photo">
+                        <p><strong>Nombre:</strong> Mateo Garcia</p>
+                        <p><strong>Edad:</strong> 19 años</p>
+                        <p><strong>Correo:</strong> Mateogarcia1660@gmail.com</p>
+                </div>
+
+                <div class="footer__sources">
+                        <h3>Fuentes</h3>
+                        <p>Sitio web: <a href="https://www.leagueoflegends.com/es-mx/news/dev/briar-a-fondo/" target="_blank">League of Legends</a></p>
+                </div>
+
+                <div class="footer__top">
+                        <a href="#top" class="footer__button">Volver arriba</a>
+                </div>
+        </footer>
+        <!-- Footer -->
+</body>
