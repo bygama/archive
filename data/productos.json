@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "Luz de Afrodita",
+    "price": 2600,
+    "description": "Amuleto dorado que emite un haz cálido, cura quemaduras y heridas leves.",
+    "stock": 5,
+    "category": "Utilidades",
+    "rarity": "Legendario",
+    "origin": "Corinto",
+    "image": "assets/img/Luz-de-afrodita.webp"
+  },
+  {
+    "id": 2,
+    "name": "Llave de Apolo",
+    "price": 1700,
+    "description": "Abre cualquier cerradura simple y revela trampas cercanas.",
+    "stock": 3,
+    "category": "Utilidades",
+    "rarity": "Épico",
+    "origin": "Corinto",
+    "image": "assets/img/Llave-de-Apolo.webp"
+  },
+  {
+    "id": 3,
+    "name": "Lanza Tormenta de Zeus",
+    "price": 3250,
+    "description": "Asta de bronce con punta en forma de rayo. Al lanzarla, encadena relámpagos.",
+    "stock": 2,
+    "category": "Armas",
+    "rarity": "Legendario",
+    "origin": "Olimpia",
+    "image": "assets/img/Lanza-Tormenta-De-Zeus.webp"
+  },
+  {
+    "id": 4,
+    "name": "Égida de Olimpia",
+    "price": 1950,
+    "description": "Escudo de bronce con el águila de Zeus. Devuelve proyectiles.",
+    "stock": 7,
+    "category": "Defensa",
+    "rarity": "Épico",
+    "origin": "Olimpia",
+    "image": "assets/img/Egida-de-Olimpia.webp"
+  },
+  {
+    "id": 5,
+    "name": "Flecha de Artemisa",
+    "price": 1400,
+    "description": "Flecha reutilizable que siempre vuelve a tu carcaj y revela huellas.",
+    "stock": 4,
+    "category": "Armas",
+    "rarity": "Raro",
+    "origin": "Esparta",
+    "image": "assets/img/Flecha-de-Artemisa.webp"
+  },
+  {
+    "id": 6,
+    "name": "Espadón de Ares",
+    "price": 900,
+    "description": "Mandoble de hierro carmesí que late como un tambor de guerra.",
+    "stock": 1,
+    "category": "Armas",
+    "rarity": "Poco común",
+    "origin": "Esparta",
+    "image": "assets/img/Espadon-de-Ares.webp"
+  },
+  {
+    "id": 7,
+    "name": "Brújula de Atenea",
+    "price": 1700,
+    "description": "Señala siempre la ruta más segura y marca trampas cercanas por 30 s.",
+    "stock": 6,
+    "category": "Utilidades",
+    "rarity": "Épico",
+    "origin": "Atenas",
+    "image": "assets/img/Brujula-de-Atenea.webp"
+  },
+  {
+    "id": 8,
+    "name": "Lanza del Águila",
+    "price": 1400,
+    "description": "Al impactar, suelta una chispa que distrae al rival por un instante.",
+    "stock": 3,
+    "category": "Armas",
+    "rarity": "Raro",
+    "origin": "Olimpia",
+    "image": "assets/img/Lanza-del-Aguila.webp"
+  },
+  {
+    "id": 9,
+    "name": "Arco de Apolo",
+    "price": 2150,
+    "description": "Dispara flechas rectas aun con viento y resalta blancos a distancia.",
+    "stock": 2,
+    "category": "Armas",
+    "rarity": "Épico",
+    "origin": "Delfos",
+    "image": "assets/img/Arco-de-Apolo.webp"
+  },
+  {
+    "id": 10,
+    "name": "Daga de Hermes",
+    "price": 1400,
+    "description": "Ligera y silenciosa; el primer golpe desde sigilo hace más daño.",
+    "stock": 5,
+    "category": "Armas",
+    "rarity": "Raro",
+    "origin": "Atenas",
+    "image": "assets/img/Daga-de-Hermes.webp"
+  },
+  {
+    "id": 11,
+    "name": "Aspis Lacedemonia",
+    "price": 450,
+    "description": "Escudo redondo espartano; permite un empujón que rompe formaciones.",
+    "stock": 4,
+    "category": "Defensa",
+    "rarity": "Común",
+    "origin": "Esparta",
+    "image": "assets/img/Aspis-Lacedemonia.webp"
+  },
+  {
+    "id": 12,
+    "name": "Capa de Hermes",
+    "price": 650,
+    "description": "Amortigua los pasos y mejora el sprint.",
+    "stock": 7,
+    "category": "Ropa",
+    "rarity": "Poco común",
+    "origin": "Atenas",
+    "image": "assets/img/Capa-de-Hermes.webp"
+  },
+  {
+    "id": 13,
+    "name": "Túnica de Delfos",
+    "price": 1000,
+    "description": "Ligera; aumenta la concentración y reduce el cansancio al explorar.",
+    "stock": 3,
+    "category": "Ropa",
+    "rarity": "Raro",
+    "origin": "Delfos",
+    "image": "assets/img/Tunica-de-Delfos.webp"
+  },
+  {
+    "id": 14,
+    "name": "Garrote de Teseo",
+    "price": 3250,
+    "description": "Garrote de metal, el primer impacto aturde y reduce defensa del enemigo.",
+    "stock": 2,
+    "category": "Armas",
+    "rarity": "Legendario",
+    "origin": "Atenas",
+    "image": "assets/img/Garrote-de-Teseo.webp"
+  },
+  {
+    "id": 15,
+    "name": "Guardabrazo de Hefesto",
+    "price": 1250,
+    "description": "Forjado en el Hephaisteion; reduce daño de fuego y evita quemaduras leves.",
+    "stock": 6,
+    "category": "Defensa",
+    "rarity": "Raro",
+    "origin": "Atenas",
+    "image": "assets/img/Guardabrazo-de-Hefesto.webp"
+  },
+  {
+    "id": 16,
+    "name": "Manto del Pireo",
+    "price": 650,
+    "description": "Capa marinera del puerto de Atenas; protege del frío y seca al instante tras mojarse.",
+    "stock": 5,
+    "category": "Ropa",
+    "rarity": "Poco común",
+    "origin": "Atenas",
+    "image": "assets/img/Manto-del-Pireo.webp"
+  }
+]
