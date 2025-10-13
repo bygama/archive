@@ -6,6 +6,20 @@
 	<title>LEGENDS.GG</title>
 	<meta name="description" content="Explora campeones de League of Legends y guarda tus favoritos." />
 	<link rel="icon" type="image/x-icon" href="assets/Logo-Legends.webp" />
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
 	<!-- Tailwind CDN -->
 	<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 	<script>
@@ -29,7 +43,7 @@
 </head>
 <body class="font-lexend bg-slate-800 text-slate-100 antialiased relative min-h-screen flex flex-col">
 
-	<!-- Loader (nuevo diseño estético) -->
+	
 	<div class="loader hidden" aria-hidden="true" role="status" aria-label="Cargando contenidos">
 		<div class="loader-core" aria-hidden="true">
 			<div class="ring r1"></div>
@@ -41,10 +55,10 @@
 		</div>
 	</div>
 
-	<!-- Overlay reutilizable para mobile/tablet -->
+	
 	<div id="offcanvas-overlay" class="lg:hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden"></div>
 
-		<!-- Sidebar unificado -->
+		
 		<aside id="app-sidebar" class="fixed top-0 left-0 h-screen z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 flex" aria-label="Barra lateral de navegación" tabindex="-1">
 		  <div class="group flex flex-col h-full bg-slate-900/85 backdrop-blur border-r border-slate-700/50 shadow-xl w-60 lg:w-16 lg:hover:w-60 transition-all duration-300 overflow-hidden relative">
 			<button id="close-sidebar" aria-label="Cerrar menú" class="lg:hidden absolute top-3 right-3 p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700/70 transition">
@@ -82,7 +96,7 @@
 			  </a>
 			</nav>
 			<div class="p-2 mt-auto mb-10">
-			  <a href="./datos.txt" download class="nav-item relative flex items-center gap-3 rounded-lg p-2 bg-indigo-600/90 hover:bg-indigo-500 text-white transition">
+			  <a id="installBtn" href="#" class="nav-item relative flex items-center gap-3 rounded-lg p-2 bg-indigo-600/90 hover:bg-indigo-500 text-white transition">
 				<span class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md text-indigo-100">
 				  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
 				</span>
@@ -111,13 +125,13 @@
 		</header>
 
 
-	<!-- Main Content -->
+	
 		<main class="flex-1 w-full transition-all duration-300 lg:ml-16 lg:w-[calc(100%-4rem)]">
-		<!-- Hero Section -->
+		
 		<section class="relative min-h-[calc(100dvh-56px)] lg:min-h-screen flex items-center overflow-hidden">
 			<div class="absolute inset-0 bg-hero-banner bg-cover bg-center"></div>
 			<div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/70 to-slate-900"></div>
-            <!--de aca-->
+            
 			<div class="relative max-w-7xl mx-auto px-6 md:px-14 lg:px-20 xl:px-24 py-20 lg:py-24 min-[1280px]:pt-16 max-[1535px]:pt-16 w-full grid lg:grid-cols-2 gap-12 items-center">
 				<div class="flex flex-col justify-between gap-8 items-center lg:items-start text-center lg:text-left">
 					<div class="space-y-5 md:max-w-2xl lg:max-w-none">
@@ -165,7 +179,7 @@
 						</a>
 					</div>
 				</div>
-                <!-- hasta aca-->
+                
 				<div class="hidden lg:flex justify-center items-center h-full">
 					<div class="relative w-full max-w-md h-full">
 						<div class="absolute inset-0 bg-gradient-to-tr from-indigo-600/40 via-blue-500/30 to-cyan-400/30 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
@@ -175,7 +189,7 @@
 											Campeones
 										</h3>
 										<ul class="champs-featured flex flex-col gap-3" aria-label="Campeones destacados">
-											<!-- Cards compactas inyectadas por JS -->
+											<!-- Cards -->
 										</ul>
 										<p class="mt-5 text-[11px] uppercase tracking-wide text-slate-500">Se actualiza al buscar</p>
 									</div>
@@ -184,7 +198,7 @@
 			</div>
 		</section>
 
-		<!-- Features / Segunda Sección -->
+		
 		<section id="features" class="relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-700/50 min-h-[100dvh] flex flex-col justify-center py-20 lg:py-24">
 			<div class="absolute inset-0 pointer-events-none [background:radial-gradient(circle_at_60%_20%,rgba(79,70,229,0.12),transparent_60%)]"></div>
 			<div class="max-w-7xl mx-auto px-6 md:px-14 lg:px-20 xl:px-24 flex-1 flex flex-col justify-center">
@@ -235,9 +249,7 @@
 		</section>
 	</main>
 
-	<!-- Modal eliminado: navegación va directo a champ.html -->
-
-	<!-- Footer -->
+	
 	<footer class="bg-slate-950/70 border-t border-slate-700/60 relative overflow-hidden lg:ml-16 lg:w-[calc(100%-4rem)]">
 		<div class="absolute inset-0 [background:radial-gradient(circle_at_20%_30%,rgba(99,102,241,.15),transparent_60%)]"></div>
 		<div class="max-w-7xl mx-auto px-6 md:px-14 lg:px-20 xl:px-24 py-14 relative">
