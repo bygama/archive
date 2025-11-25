@@ -73,6 +73,28 @@ self.addEventListener('push', (e)=>{
     );
 });
 
+// Mensaje desde la página principal (para notificaciones de conexión)
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'CONNECTION_STATUS') {
+        const { isOnline } = event.data;
+        const title = isOnline ? '✅ Conexión restaurada' : '⚠️ Sin conexión';
+        const body = isOnline 
+            ? 'Estás online de nuevo. Todas las funciones están disponibles.'
+            : 'Estás offline. Algunas funciones pueden no estar disponibles.';
+        
+        event.waitUntil(
+            self.registration.showNotification(title, {
+                body: body,
+                icon: 'assets/icons/android-icon-192x192.png',
+                badge: 'assets/icons/android-icon-48x48.png',
+                vibrate: isOnline ? [200, 100] : [100, 50, 100, 50, 100],
+                tag: 'connection-status',
+                renotify: true
+            })
+        );
+    }
+});
+
 self.addEventListener('notificationclick', (e)=>{
     console.log('notificacion click: ', e);
     if(e.action === 'SI'){

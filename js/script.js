@@ -12,31 +12,33 @@ if ('serviceWorker' in navigator) {
             }
         };
 
-        // Intento 1: relativo (para GitHub Pages/subcarpetas)
+        
         const okRelative = await tryRegister('sw.js');
-        // Fallback: raíz (para localhost o hosting en la raíz del dominio)
+        
         if (!okRelative) {
             await tryRegister('/sw.js');
         }
 
-        //Demorar el popup de permisos de notificaciones
+        
         if(window.Notification && Notification.permission !== 'denied'){
             setTimeout(()=>{
                 Notification.requestPermission((status)=>{
                     console.log('Permiso de notificaciones: ', status);
+                    
+                    
+                    if(status === 'granted'){
+                        new Notification('Hola! Soy una notificacion',{
+                            body: 'Gracias por permitir las notificaciones',
+                            icon: 'assets/icons/android-icon-192x192.png',
+                            image: 'assets/img/No-Image-Placeholder.svg.png',
+                            badge: 'assets/icons/android-icon-48x48.png',
+                            vibrate: [100, 50, 100],
+                            renotify: true,
+                            tag: 'notificacion-sample'
+                        });
+                    }
                 });
             }, 2000);
-
-            //Mostrar notificacion
-            new Notification('Hola! Soy una notificacion',{
-                body: 'Gracias por permitir las notificaciones',
-                icon: 'assets/icons/android-icon-192x192.png',
-                image: 'assets/img/No-Image-Placeholder.svg.png',
-                badge: 'assets/icons/android-icon-48x48.png',
-                vibrate: [100, 50, 100],
-                renotify: true,
-                tag: 'notificacion-sample'
-            });
         }
     });
 }
@@ -88,6 +90,69 @@ if ('serviceWorker' in navigator) {
         }
     });
 })();
+
+// Función para mostrar notificación de estado de conexión
+async function mostrarNotificacionConexion(titulo, mensaje, isOnline) {
+  if (!('Notification' in window)) {
+    console.log('Notificaciones no soportadas');
+    return;
+  }
+
+  // Si el permiso no está concedido, no intentar mostrar notificación
+  if (Notification.permission !== 'granted') {
+    console.log('Permiso de notificaciones no concedido');
+    return;
+  }
+
+  try {
+    const reg = await navigator.serviceWorker.ready;
+    await reg.showNotification(titulo, {
+      body: mensaje,
+      icon: 'assets/icons/android-icon-192x192.png',
+      badge: 'assets/icons/android-icon-48x48.png',
+      vibrate: isOnline ? [200, 100] : [100, 50, 100, 50, 100],
+      tag: 'connection-status',
+      renotify: true,
+      requireInteraction: false,
+      silent: false
+    });
+  } catch (err) {
+    console.error('Error mostrando notificación:', err);
+  }
+}
+
+// Detectar cambios en el estado de conexión
+window.addEventListener('online', () => {
+  console.log('Conexión restaurada');
+  mostrarNotificacionConexion(
+    '✅ Conexión restaurada',
+    'Estás online de nuevo. Todas las funciones están disponibles.',
+    true
+  );
+});
+
+window.addEventListener('offline', () => {
+  console.log('Sin conexión');
+  mostrarNotificacionConexion(
+    '⚠️ Sin conexión',
+    'Estás offline. Algunas funciones pueden no estar disponibles.',
+    false
+  );
+});
+
+// Verificar estado inicial al cargar la página
+window.addEventListener('load', () => {
+  if (!navigator.onLine) {
+    console.log('La página se cargó sin conexión');
+    setTimeout(() => {
+      mostrarNotificacionConexion(
+        '⚠️ Sin conexión',
+        'Estás offline. Algunas funciones pueden no estar disponibles.',
+        false
+      );
+    }, 1000);
+  }
+});
 
 // Botón o evento de usuario para pedir permiso + mostrar noti via SW
 async function activarNotificaciones() {
