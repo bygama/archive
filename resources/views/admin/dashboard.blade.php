@@ -53,6 +53,29 @@
             <span class="admin-stat__value stat-counter">{{ $stats['categories'] }}</span>
             <span class="admin-stat__foot">Clasificación Biológica</span>
         </article>
+
+        <article class="admin-stat">
+            <div class="admin-stat__top">
+                <span class="admin-stat__label">Pedidos</span>
+                <x-tabler-shopping-cart class="size-5 text-[#ED1C24]" aria-hidden="true" />
+            </div>
+            <span class="admin-stat__value stat-counter">{{ $stats['orders'] }}</span>
+            <span class="admin-stat__foot">Facturado: $ {{ number_format($stats['revenue'], 0, ',', '.') }}</span>
+        </article>
+
+        <article class="admin-stat">
+            <div class="admin-stat__top">
+                <span class="admin-stat__label">Más Vendido</span>
+                <x-tabler-trending-up class="size-5 text-[#ED1C24]" aria-hidden="true" />
+            </div>
+            @if ($topProduct)
+                <span class="admin-stat__value stat-counter text-[1.1rem]">{{ $topProduct->name }}</span>
+                <span class="admin-stat__foot">{{ $topProductQty }} unidades vendidas</span>
+            @else
+                <span class="admin-stat__value stat-counter text-[1.1rem]">—</span>
+                <span class="admin-stat__foot">Sin pedidos todavía</span>
+            @endif
+        </article>
     </div>
 
     <div class="grid gap-5 lg:grid-cols-[1.6fr_1fr]">

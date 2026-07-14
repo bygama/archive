@@ -118,4 +118,14 @@ class Product extends Model
     {
         return $this->hasMany(Subscription::class);
     }
+
+    /**
+     * las lineas de pedido que incluyen este producto
+     *
+     * @return HasMany
+     */
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }
