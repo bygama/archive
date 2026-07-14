@@ -131,6 +131,64 @@
                 @endif
             </section>
         </div>
+
+        {{-- historial de pedidos --}}
+        <section class="technical-panel mt-5" data-animate="fade-up">
+            <div class="flex items-center justify-between gap-3 mb-5">
+                <h2 class="font-display text-[0.95rem] tracking-[0.2em] uppercase text-white">Historial de Pedidos</h2>
+                <span class="font-classified text-[0.6rem] tracking-[0.28em] uppercase text-[#5D6E6E]">
+                    {{ $u->orders->count() }} {{ $u->orders->count() === 1 ? 'pedido' : 'pedidos' }}
+                </span>
+            </div>
+
+            @if ($u->orders->isNotEmpty())
+                <div class="admin-table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pedido</th>
+                                <th scope="col">Ítems</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col" class="text-right">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($u->orders->sortByDesc('created_at') as $order)
+                                <tr>
+                                    <td class="mono text-[#FFFFFF]">#{{ $order->id }}</td>
+                                    <td>{{ $order->items->pluck('product.name')->join(', ') }}</td>
+                                    <td>
+                                        @php
+                                            $orderBadge = match ($order->status) {
+                                                'pagado' => 'badge-nominal',
+                                                'rechazado' => 'badge-critical',
+                                                default => 'badge-standby',
+                                            };
+                                        @endphp
+                                        <span class="badge {{ $orderBadge }}">
+                                            <x-tabler-circle-check class="size-3.5" aria-hidden="true" />
+                                            {{ ucfirst($order->status) }}
+                                        </span>
+                                    </td>
+                                    <td class="mono">{{ $order->created_at?->format('d/m/Y') }}</td>
+                                    <td class="text-right mono text-white">$ {{ number_format($order->total, 0, ',', '.') }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                <div class="catalog-empty">
+                    <p class="catalog-empty__title">Sin pedidos</p>
+                    <p class="catalog-empty__desc">Todavía no confirmaste ningún pedido. Agregá ítems al carrito para empezar.</p>
+                    <a href="{{ route('products.index') }}" class="btn btn-secondary">
+                        <x-tabler-shopping-cart class="size-4" aria-hidden="true" />
+                        Ir al Catálogo
+                    </a>
+                </div>
+            @endif
+        </section>
     </div>
 </section>
 @endsection

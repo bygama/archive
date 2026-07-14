@@ -87,14 +87,15 @@
                     </div>
                 @endauth
 
+                @php $cartCount = count(session('cart', [])); @endphp
                 <a
                     href="{{ route('cart') }}"
                     class="inline-flex items-center gap-2 border border-[#5D6E6E]/40 px-3 py-2 text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-[#FFFFFF] transition-colors hover:border-[#ED1C24] hover:text-[#ED1C24]"
-                    aria-label="Carrito · 3 ítems"
+                    aria-label="Carrito · {{ $cartCount }} ítems"
                 >
                     <x-tabler-shopping-cart class="size-4" aria-hidden="true" />
                     <span class="hidden sm:inline">Carrito</span>
-                    <span class="font-classified text-[0.65rem] tracking-[0.18em] text-[#ED1C24]">03</span>
+                    <span class="font-classified text-[0.65rem] tracking-[0.18em] text-[#ED1C24]">{{ str_pad((string) $cartCount, 2, '0', STR_PAD_LEFT) }}</span>
                 </a>
 
                 <button

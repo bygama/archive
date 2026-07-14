@@ -118,4 +118,61 @@
             </div>
         </section>
     </div>
+
+    {{-- historial de pedidos --}}
+    <section class="admin-panel mt-5">
+        <header class="admin-panel__head">
+            <h2 class="admin-panel__title">Historial de Pedidos</h2>
+            <span class="font-classified text-[0.62rem] tracking-[0.28em] uppercase text-[#5D6E6E]">
+                {{ $user->orders->count() }} {{ $user->orders->count() === 1 ? 'pedido' : 'pedidos' }}
+            </span>
+        </header>
+
+        <div class="admin-panel__body--flush">
+            @if ($user->orders->isNotEmpty())
+                <div class="admin-table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pedido</th>
+                                <th scope="col">Ítems</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col" class="text-right">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($user->orders->sortByDesc('created_at') as $order)
+                                <tr>
+                                    <td class="mono text-[#FFFFFF]">#{{ $order->id }}</td>
+                                    <td>{{ $order->items->pluck('product.name')->join(', ') }}</td>
+                                    <td>
+                                        @php
+                                            $orderBadge = match ($order->status) {
+                                                'pagado' => 'badge-nominal',
+                                                'rechazado' => 'badge-critical',
+                                                default => 'badge-standby',
+                                            };
+                                        @endphp
+                                        <span class="badge {{ $orderBadge }}">
+                                            <x-tabler-circle-check class="size-3.5" aria-hidden="true" />
+                                            {{ ucfirst($order->status) }}
+                                        </span>
+                                    </td>
+                                    <td class="mono">{{ $order->created_at?->format('d/m/Y') }}</td>
+                                    <td class="text-right mono text-white">$ {{ number_format($order->total, 0, ',', '.') }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                <div class="admin-empty">
+                    <x-tabler-package-off class="size-8 text-[#5D6E6E]" aria-hidden="true" />
+                    <p class="admin-empty__title">Sin pedidos</p>
+                    <p class="text-sm text-[#9CACAD]">Este usuario todavía no registra pedidos.</p>
+                </div>
+            @endif
+        </div>
+    </section>
 @endsection

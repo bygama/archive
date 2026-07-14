@@ -120,17 +120,32 @@
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <button type="button" class="btn btn-primary btn-block">
-                        <x-tabler-fingerprint class="size-4" aria-hidden="true" />
-                        Solicitar Autorización
-                    </button>
-                    <button type="button" class="btn btn-restricted btn-block">
-                        <x-tabler-shopping-cart class="size-4" aria-hidden="true" />
-                        Agregar al Carrito
-                    </button>
-                    <p class="font-classified text-[0.7rem] tracking-[0.24em] text-[#5D6E6E] text-center">
-                        Módulo de checkout pendiente de aprobación interna.
-                    </p>
+                    @include('partials.flash')
+
+                    <form method="POST" action="{{ route('cart.add', $product) }}" class="flex flex-col gap-3">
+                        @csrf
+                        <div class="flex items-center gap-3">
+                            <label for="quantity" class="font-classified text-[0.65rem] tracking-[0.28em] text-[#5D6E6E]">CANT</label>
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                max="99"
+                                class="input-control w-20 text-center"
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-restricted btn-block">
+                            <x-tabler-shopping-cart class="size-4" aria-hidden="true" />
+                            Agregar al Carrito
+                        </button>
+                    </form>
+
+                    <a href="{{ route('cart') }}" class="btn btn-ghost btn-block">
+                        <x-tabler-arrow-up-right class="size-4" aria-hidden="true" />
+                        Ver Carrito
+                    </a>
                 </div>
 
                 {{-- aviso de contencion --}}

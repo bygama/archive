@@ -100,6 +100,8 @@
 
 <section class="section-shell pt-2 pb-24">
     <div class="container-tech flex flex-col gap-10">
+        @include('partials.flash')
+
         {{-- filtros --}}
         <form
             method="GET"

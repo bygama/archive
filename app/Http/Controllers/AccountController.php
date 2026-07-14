@@ -19,7 +19,7 @@ class AccountController extends Controller
     {
         /** @var User $user */
         $user = Auth::user();
-        $user->load('subscriptions.product');
+        $user->load('subscriptions.product', 'orders.items.product');
 
         return view('account.dashboard', [
             'user' => $user,

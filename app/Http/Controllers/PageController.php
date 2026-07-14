@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
-use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -32,18 +31,6 @@ class PageController extends Controller
         ['year' => '1988', 'title' => 'Operaciones Arklay', 'note' => 'Expansión de los terrenos ficticios de investigación y consolidación del archivo.'],
         ['year' => '1998', 'title' => 'Incidente Raccoon', 'note' => 'Evento de referencia usado como ancla narrativa canónica en todo el archivo.'],
         ['year' => '2003', 'title' => 'Reestructuración', 'note' => 'Reorganización interna que enmarca el layout actual del archivo.'],
-    ];
-
-    /**
-     * carrito con tres slugs fijos puestos a mano. el parcial todavia no
-     * pide carrito persistente; cuando lo pida esto sale de la session del user.
-     *
-     * @var array<int, array<string, string|int>>
-     */
-    private const DEMO_CART = [
-        ['slug' => 't-virus', 'qty' => 1],
-        ['slug' => 'g-virus', 'qty' => 2],
-        ['slug' => 'las-plagas', 'qty' => 1],
     ];
 
     /**
@@ -85,34 +72,5 @@ class PageController extends Controller
             ->route('contact')
             ->with('contact_status', 'received')
             ->with('contact_full_name', $request->string('full_name')->toString());
-    }
-
-    /**
-     * arma el carrito: por cada slug busca el producto y saca el subtotal
-     *
-     * @return View
-     */
-    public function cart(): View
-    {
-        $items = collect(self::DEMO_CART)
-            ->map(function (array $entry): ?array {
-                $product = Product::with('category')->where('slug', $entry['slug'])->first();
-                if ($product === null) {
-                    return null;
-                }
-
-                return [
-                    'product' => $product,
-                    'qty' => $entry['qty'],
-                    'subtotal' => $product->price * $entry['qty'],
-                ];
-            })
-            ->filter()
-            ->values();
-
-        return view('pages.cart', [
-            'items' => $items,
-            'subtotal' => $items->sum('subtotal'),
-        ]);
     }
 }

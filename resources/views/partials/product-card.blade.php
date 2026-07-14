@@ -121,13 +121,16 @@
             </a>
         </div>
 
-        <button
-            type="button"
-            class="btn btn-restricted btn-block text-[0.7rem]"
-            aria-label="Agregar {{ $product['name'] }} al carrito pendiente"
-        >
-            <x-tabler-shopping-cart class="size-3.5" aria-hidden="true" />
-            Agregar al Carrito
-        </button>
+        <form method="POST" action="{{ route('cart.add', $product) }}">
+            @csrf
+            <button
+                type="submit"
+                class="btn btn-restricted btn-block text-[0.7rem]"
+                aria-label="Agregar {{ $product['name'] }} al carrito"
+            >
+                <x-tabler-shopping-cart class="size-3.5" aria-hidden="true" />
+                Agregar al Carrito
+            </button>
+        </form>
     </div>
 </article>

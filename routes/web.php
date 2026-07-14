@@ -9,7 +9,10 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MercadoPagoWebhookController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +29,23 @@ Route::get('/blog/{post:slug}', [BlogController::class, 'show'])->name('blog.sho
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
-Route::get('/cart', [PageController::class, 'cart'])->name('cart');
+
+// carrito (publico, vive en sesion)
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/{product}', [CartController::class, 'add'])->name('cart.add');
+Route::patch('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/{product}', [CartController::class, 'remove'])->name('cart.remove');
+
+// checkout (requiere login)
+Route::post('/checkout', [OrderController::class, 'store'])
+    ->middleware('auth')
+    ->name('checkout.store');
+Route::get('/checkout/success', [OrderController::class, 'success'])->name('checkout.success');
+Route::get('/checkout/failure', [OrderController::class, 'failure'])->name('checkout.failure');
+Route::get('/checkout/pending', [OrderController::class, 'pending'])->name('checkout.pending');
+
+// webhook de MercadoPago (sin auth, lo llama MP server-to-server)
+Route::post('/webhooks/mercadopago', [MercadoPagoWebhookController::class, 'handle'])->name('mercadopago.webhook');
 
 // autenticacion
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

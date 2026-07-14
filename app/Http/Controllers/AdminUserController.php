@@ -29,7 +29,7 @@ class AdminUserController extends Controller
      */
     public function show(User $user): View
     {
-        $user->load('subscriptions.product');   // trae los servicios + su producto
+        $user->load('subscriptions.product', 'orders.items.product');   // trae los servicios y pedidos + su producto
 
         return view('admin.users.show', [
             'user' => $user,
