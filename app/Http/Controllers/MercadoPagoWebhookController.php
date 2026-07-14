@@ -14,7 +14,7 @@ class MercadoPagoWebhookController extends Controller
 {
     /**
      * mp notifica los cambios de estado de un pago via webhook/IPN.
-     * consultamos el pago por id y actualizamos el pedido asociado.
+     * consultamos el pago por id y actualizamos el pedido papa.
      *
      * @param  Request  $request
      * @return JsonResponse
