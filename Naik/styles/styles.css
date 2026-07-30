@@ -1,0 +1,1781 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  /*global*/
+}
+
+.html {
+  font-size: 62.5%;
+  height: 100%;
+  /* Cambia la medida del rem de 16px a 10px*/
+  background-color: #FFF;
+}
+
+/*Logo naik antes del header+nav*/
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
+  width: 100%;
+  background-color: #FFA400;
+  /* logo naik NEGRO arriba del nav*/
+}
+
+.container-logo__img {
+  height: 40px;
+}
+
+/*header+nav con position sticky (menu) (all pages)*/
+.header {
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.nav {
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.nav__container {
+  display: flex;
+  width: 100%;
+  background-color: black;
+}
+
+/*Logo naik BLANCO*/
+.nav__container-logo {
+  padding: 10px;
+}
+
+.nav__container-logo__img {
+  height: 60px;
+}
+
+/*Menu del nav*/
+.nav__container-menu {
+  width: fit-content;
+  display: flex;
+}
+
+/*menu options*/
+.nav__container-menu__list {
+  display: flex;
+  list-style-type: none;
+  padding-left: 315px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__container-menu__list-item {
+  text-decoration: none;
+  color: white;
+  height: fit-content;
+  font-size: 17px;
+  padding: 10px 100px;
+}
+
+.nav__container-menu__list-item-link {
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+}
+
+.nav__container-menu__list-item-link:hover {
+  color: #FFA400;
+}
+
+/*Buscador de la pagina*/
+.nav__container-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__container-search__form-input {
+  border-radius: 5px;
+  border-color: #FFA400;
+  height: 35px;
+  width: 200px;
+  font-size: 14px;
+}
+
+/*Carrito de compras y favoritos*/
+.nav__container-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__container-actions__favorite,
+.nav__container-actions__cart {
+  padding: 10px 0;
+  padding-left: 30px;
+}
+
+.nav__container-actions__favorite-img,
+.nav__container-actions__cart-img {
+  width: 23px;
+}
+
+/*Responsive header+nav*/
+@media (max-width: 1880px) {
+  .nav__container-menu__list {
+    padding-left: 35px;
+  }
+}
+@media (max-width: 1583px) {
+  .nav__container-menu__list {
+    padding-left: 1px;
+  }
+}
+@media (max-width: 1554px) {
+  .nav__container-menu__list {
+    padding-left: 0px;
+  }
+  .nav__container-menu__list-item-link {
+    padding: 10px 85px;
+  }
+  .nav__container-menu__list-item {
+    padding: 1px;
+  }
+}
+@media (max-width: 1455px) {
+  .nav__container-actions__favorite,
+  .nav__container-actions__cart {
+    padding: 0px 0px 0px 8px;
+  }
+}
+@media (max-width: 1400px) {
+  .nav__container-menu__list-item-link {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 930px) {
+  .nav__container-menu__list-item-link {
+    padding: 2px 8px;
+  }
+  .nav__container-actions a {
+    padding: 2px 0;
+    padding-left: 10px;
+  }
+  .nav__container-actions__favorite-img,
+  .nav__container-actions__cart-img {
+    width: 23px;
+  }
+}
+@media (max-width: 814px) {
+  .nav__container-menu__list-item-link {
+    padding: 1px 4px;
+  }
+  .nav__container-actions a {
+    padding: 1px 0;
+    padding-left: 4px;
+  }
+  .nav__container-actions__favorite-img,
+  .nav__container-actions__cart-img {
+    width: 18px;
+  }
+}
+@media (max-width: 729px) {
+  .nav__container-menu__list {
+    padding: 31px 0;
+    flex-wrap: wrap;
+  }
+  .nav__container-menu__list-item {
+    padding: 1px;
+  }
+  .nav__container-logo {
+    display: none;
+    /*Logo naik BLANCO*/
+  }
+  .nav__container-logo__img {
+    display: none;
+  }
+}
+@media (max-width: 660px) {
+  .nav__container-search__form-input {
+    border-radius: 5px;
+    border-color: #FFA400;
+    height: 35px;
+    width: 95px;
+    font-size: 14px;
+  }
+  .nav__container-actions a {
+    padding-top: 16px;
+  }
+}
+@media (max-width: 546px) {
+  .nav {
+    height: 120px;
+  }
+  .nav__container-menu__list {
+    padding: 20px 60px;
+    display: inline-block;
+  }
+  .nav__container-actions {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    /*Carrito de compras y favoritos*/
+  }
+  .nav__container-search__form-input {
+    border-radius: 5px;
+    border-color: #FFA400;
+    height: 35px;
+    width: 150px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 481px) {
+  .nav__container-menu__list {
+    padding: 20px 4px;
+    display: inline-block;
+  }
+  .nav__container-search__form-input {
+    border-radius: 5px;
+    border-color: #FFA400;
+    height: 35px;
+    width: 100px;
+    font-size: 14px;
+  }
+}
+/*footer (all pages)*/
+.footer {
+  height: fit-content;
+  width: 100%;
+}
+
+.footer__sections {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  font-size: 14px;
+  height: 230px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-top: #FFA400 solid;
+}
+
+/*todas las listas*/
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__list-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.footer__link {
+  color: #666666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer__link:hover {
+  color: #FFA400;
+}
+
+/*sobre la empresa*/
+.footer__section-info {
+  width: fit-content;
+  padding-right: 80px;
+}
+
+.footer__section-info__title {
+  padding-top: 20px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/*ubicación de la empresa*/
+.footer__section-location {
+  width: fit-content;
+  padding-right: 80px;
+}
+
+.footer__section-location__map-iframe {
+  border: none;
+  width: 100%;
+  height: 180px;
+}
+
+/*soporte*/
+.footer__section-support {
+  width: fit-content;
+  padding-right: 80px;
+}
+
+.footer__section-support__title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/*Redes sociales*/
+.footer__section-social {
+  width: fit-content;
+  padding-right: 80px;
+}
+
+.footer__section-social__title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/*newsletter*/
+.footer__section-newsletter {
+  width: fit-content;
+}
+
+.footer__section-newsletter__title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.footer__form {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__form-group1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.footer__form-input {
+  width: 255px;
+  padding: 4px;
+}
+
+.footer__form-group2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 29px;
+}
+
+.footer__form-button {
+  padding: 7px;
+}
+
+.footer__form-button:hover {
+  background-color: #FFA400;
+  font-weight: bold;
+}
+
+/*copyright*/
+.footer__copyright {
+  background-color: #FFA400;
+  color: #000;
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__copy-paragraph {
+  font-size: 15px;
+}
+
+@media (max-width: 1760px) {
+  .footer__section-info {
+    width: fit-content;
+    padding-right: 50px;
+  }
+  .footer__section-location {
+    width: fit-content;
+    padding-right: 50px;
+  }
+  .footer__section-social {
+    width: fit-content;
+    padding-right: 50px;
+  }
+  .footer__section-support {
+    width: fit-content;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 1593px) {
+  .footer__section-info {
+    width: fit-content;
+    padding-right: 20px;
+  }
+  .footer__section-location {
+    width: fit-content;
+    padding-right: 20px;
+  }
+  .footer__section-social {
+    width: fit-content;
+    padding-right: 20px;
+  }
+  .footer__section-support {
+    width: fit-content;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 1485px) {
+  .footer__section-location {
+    width: 200px;
+    margin-right: 20px;
+  }
+  .footer__section-location__map-iframe {
+    border: none;
+    width: 200px;
+    height: 180px;
+  }
+}
+@media (max-width: 1372px) {
+  .footer__sections {
+    flex-wrap: wrap;
+    height: 400px;
+  }
+}
+@media (max-width: 1372px) {
+  .footer__section-location {
+    width: 400px;
+  }
+  .footer__section-location__map-iframe {
+    width: 400px;
+  }
+}
+@media (max-width: 1372px) {
+  .footer__section-location {
+    width: 400px;
+  }
+  .footer__section-location__map-iframe {
+    width: 400px;
+  }
+}
+@media (max-width: 795px) {
+  .footer__sections {
+    flex-wrap: wrap;
+    height: 700px;
+  }
+}
+@media (max-width: 781px) {
+  .footer__section-location {
+    margin-left: 20px;
+  }
+  .footer__section-location__map-iframe {
+    width: 300px;
+  }
+}
+@media (max-width: 512px) {
+  .footer__section-location {
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .footer__section-info {
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .footer__section-newsletter {
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 428px) {
+  .footer__section-newsletter {
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .footer__section-social {
+    width: fit-content;
+    padding-right: 0px;
+  }
+}
+@media (max-width: 420px) {
+  .footer__sections {
+    height: 900px;
+  }
+}
+@media (max-width: 380px) {
+  .footer__section-support {
+    padding-right: 6px;
+  }
+  .footer__copy-paragraph {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+}
+@media (max-width: 375px) {
+  .footer__form-input {
+    width: 180px;
+  }
+  .footer__copy-paragraph {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}
+@media (max-width: 330px) {
+  .footer__section-info__title {
+    font-size: 18px;
+  }
+}
+/*Fin footer/header/nav y estilos globales.*/
+/*index*/
+/*banner+button para acceder a productos (index)*/
+.banner {
+  position: relative;
+  display: flex;
+  height: 570px;
+  border-bottom: #FFA400 solid 3px;
+  /*contenedor del banner*/
+}
+
+/*banner*/
+.banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/*contenido donde se encuentra el titulo (bienvenida) y el botón de productos*/
+.banner__content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  padding-top: 60px;
+}
+
+/*titulo*/
+.content__title {
+  padding: 10px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__title__text {
+  font-size: 80px;
+  color: #000;
+  background-color: #FFC65C;
+  border-radius: 3px;
+  width: fit-content;
+  height: fit-content;
+}
+
+/*párrafo*/
+.content__description {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__description__text {
+  font-size: 30px;
+  color: #000;
+  background-color: #FFC65C;
+  border-radius: 3px;
+  width: fit-content;
+  height: fit-content;
+}
+
+/*botón*/
+.content__button {
+  padding: 20px;
+}
+
+.content__link-button {
+  display: inline-block;
+  background-color: #413C3A;
+  color: #FFF;
+  padding: 12px 21px;
+  border: 2px solid #FFA400;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.content__link-button:hover {
+  background-color: #FFA400;
+  color: #000;
+  cursor: pointer;
+}
+
+.content__link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #F5F5F5;
+}
+
+.content__link:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/*main--index*/
+.main--index {
+  height: fit-content;
+}
+
+/*Running,basket y football*/
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories__item {
+  padding: 40px;
+  padding-top: 80px;
+}
+
+.categories__item-title {
+  font-weight: 900;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+  white-space: wrap;
+}
+
+.categories__item-img {
+  width: 407px;
+  height: 522px;
+  border: solid #FFA400 2px;
+}
+
+.categories__item-img:hover {
+  filter: brightness(1.4);
+}
+
+.categories__item-img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.categories__item-img:hover::after {
+  opacity: 1;
+}
+
+/*Productos destacados,hombres,mujeres y niños (index)*/
+/*contenedor*/
+.products-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products {
+  height: 740px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #FFC65C;
+  border-radius: 10px;
+  width: 1000px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  border: 5px solid #FFA400;
+}
+
+/*titulo*/
+.products__h2 {
+  font-weight: 900;
+  font-size: 40px;
+  padding: 10px;
+}
+
+/*botón con el link*/
+.products__link-button {
+  display: flex;
+  border-radius: 2px;
+  border: none;
+  padding: 5px 13px;
+  background-color: black;
+  color: #F5F5F5;
+}
+
+.products__link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #F5F5F5;
+}
+
+.products__link-button:hover {
+  background-color: #FFA400;
+  cursor: pointer;
+}
+
+.products__link:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/*Contenedor del par de productos y estilos*/
+.products__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/*Segundo contenedor*/
+.products__pair {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/*items (productos)*/
+.products__pair-item {
+  width: 430px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+.products__pair-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.products__pair-item h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+.products__pair-item p {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+.products__pair-item button {
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.products__pair-item button:hover {
+  background-color: #0052a3;
+}
+
+/*section dunk and just do it*/
+.section__just-dunk {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.section__just-dunk__img {
+  border-radius: 2px;
+  border: 2px solid #FFA400;
+}
+
+/*contacto*/
+.contact {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+/*segundo contenedor*/
+.contact__container {
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #FFA400;
+}
+
+/*titulo de contacto*/
+.contact__h2 {
+  color: #000;
+  text-align: center;
+  font-size: 25px;
+}
+
+/*formularios*/
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.contact__form-label {
+  color: #000;
+  margin-top: 10px;
+}
+
+.contact__form-input,
+.contact__form-textarea {
+  border: 1px solid #000;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+/*zona para dejar mensaje*/
+.contact__form-textarea {
+  resize: none;
+  height: 100px;
+}
+
+/*botón de enviar*/
+.contact__form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto__form-submit {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100px;
+  font-size: 14px;
+}
+
+.contacto__form-submit:hover {
+  background-color: #FFC65C;
+  color: #000;
+  font-weight: bold;
+  border: 3px solid #000;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1417px) {
+  .categories {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1019px) {
+  .products {
+    width: 930px;
+    height: 700px;
+  }
+  .section__just-dunk {
+    margin: 3px;
+    margin-top: 80px;
+  }
+  .section__just-dunk__img {
+    width: 100%;
+  }
+}
+@media (max-width: 947px) {
+  .products__pair-item {
+    width: 380px;
+  }
+  .products {
+    width: 830px;
+    height: 680px;
+  }
+}
+@media (max-width: 900px) {
+  .content__title__text {
+    font-size: 50px;
+  }
+  .content__description__text {
+    font-size: 20px;
+  }
+}
+@media (max-width: 850px) {
+  .products__pair-item {
+    width: 300px;
+  }
+  .products {
+    width: 650px;
+    height: 580px;
+  }
+}
+@media (max-width: 670px) {
+  .products__pair-item {
+    width: 200px;
+  }
+  .products {
+    width: 450px;
+    height: 530px;
+  }
+}
+@media (max-width: 469px) {
+  .products__pair-item {
+    width: 160px;
+  }
+  .products__h2 {
+    font-size: 30px;
+  }
+  .products {
+    width: 360px;
+    height: 510px;
+  }
+}
+@media (max-width: 435px) {
+  .content__title__text {
+    font-size: 40px;
+  }
+  .content__description__text {
+    font-size: 15px;
+  }
+  .categories__item-img {
+    width: 280px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 378px) {
+  .products__pair-item {
+    width: 132px;
+  }
+  .products {
+    width: 305px;
+    height: 500px;
+  }
+}
+/*index*/
+/*account*/
+/* contenedor de cuenta*/
+.body--account {
+  background-color: #141414;
+  height: 100%;
+  width: 100%;
+}
+
+.account {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  padding: 60px;
+  background-color: white;
+  border: 3px solid #FFA400;
+}
+
+/*Logo para volver a inicio*/
+.account__logo-img {
+  width: 100px;
+  margin-left: 192px;
+}
+
+/*Titulo*/
+.account__title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/*Formularios*/
+.account__form {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Labels con sus imputs*/
+.account__form-label {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.account__form-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/*botón de enviar*/
+.account__form-submit {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #FFA400;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.account__form-submit:hover {
+  background-color: black;
+}
+
+@media only screen and (max-width: 620px) {
+  .account {
+    top: 50%;
+    left: 50%;
+    width: 360px;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: white;
+    border: 2px solid #FFA400;
+  }
+  .account__logo-img {
+    width: 100px;
+    margin-left: 96px;
+  }
+  .account__container__form {
+    width: 90%;
+  }
+  .account__form-label {
+    font-size: 1rem;
+  }
+  .account__form-input,
+  .account__form-submit {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .account {
+    width: 280px;
+    padding: 20px;
+  }
+  .account__logo-img {
+    margin-left: 76px;
+  }
+}
+/*account*/
+/*galería*/
+/*Main de la pagina galería*/
+.main--gallery {
+  max-width: 1400px;
+  margin: 20px auto;
+}
+
+/*galería*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+/*items de la galería*/
+.gallery__item {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+/*imágenes de la galería*/
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+  border: none;
+}
+
+@media (max-width: 920px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+}
+/*galería*/
+/*sobre nosotros*/
+/*Main de la pagina sobre nosotros*/
+.main--about-us {
+  max-width: 800px;
+  height: 820px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*Misión y valores*/
+.about-us__mission {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.about-us__mission-title {
+  color: #444;
+}
+
+.about-us__mission-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/*Historia*/
+.about-us__history {
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.about-us__history-title {
+  color: #444;
+}
+
+.about-us__history-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/*Equipo*/
+.about-us__team {
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.about-us__team-title {
+  color: #444;
+}
+
+.about-us__team-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+@media (max-width: 1300px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 649px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 1020px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 542px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 385px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 385px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+@media (max-width: 351px) {
+  .main--about-us {
+    max-width: 800px;
+    height: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+/*sobre nosotros*/
+/*productos*/
+.main--products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/*Filas con productos (van de a 4 productos cada fila en 1920x1080)*/
+.product__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/*items de las rows*/
+.product__item {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+.product__item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.product__item h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+.product__item p {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+.product__item button {
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.product__item button:hover {
+  background-color: #0052a3;
+}
+
+@media (max-width: 1400px) {
+  .product__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .product__row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/*productos*/
+/*404*/
+.body--404 {
+  font-family: "Roboto Mono", monospace;
+  background-color: #FFA400;
+  color: #333333;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+.container-404 {
+  background-color: #F5F5F5;
+  height: 220px;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: #000 solid 3px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.container-404__title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.container-404__paragraph {
+  font-size: 18px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.container-404__paragraph-link {
+  color: #337ab7;
+  font-size: 24px;
+}
+
+.container-404__paragraph-link:hover {
+  color: #FFA400;
+}
+
+@media (max-width: 843px) {
+  .container-404__title {
+    font-size: 33px;
+  }
+  .container-404__paragraph {
+    font-size: 14px;
+  }
+  .container-404__paragraph-link {
+    color: #337ab7;
+    font-size: 16px;
+  }
+}
+@media (max-width: 630px) {
+  .body--404 {
+    padding: 50px;
+  }
+  .container-404 {
+    padding: 3px;
+    height: fit-content;
+    width: 700px;
+  }
+  .container-404__title {
+    white-space: pre-wrap;
+  }
+  .container-404__paragraph {
+    white-space: pre-wrap;
+  }
+}
+@media (max-width: 416px) {
+  .body--404 {
+    padding: 20px 2px;
+  }
+}
+/*404*/
+/*Normalize y barra de scroll*/
+/* Barra de scroll */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Ancho de la barra de scroll */
+}
+
+/* Puntero de la barra de scroll */
+::-webkit-scrollbar-thumb {
+  background-color: #FFA400;
+  /* Color del puntero */
+  /* Radio de la esquina del puntero */
+}
+
+/*Pista de la barra de desplazamiento*/
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+/* Barra de scroll (Firefox) */
+::-moz-scrollbar {
+  width: 10px;
+}
+
+/* Puntero de la barra de scroll (Firefox) */
+::-moz-scrollbar-thumb {
+  background-color: #FFA400;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+body {
+  margin: 0;
+}
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+main {
+  display: block;
+}
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+a {
+  background-color: transparent;
+}
+
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+   * Add the correct font size in all browsers.
+   */
+small {
+  font-size: 80%;
+}
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+img {
+  border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+   * Correct the padding in Firefox.
+   */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+details {
+  display: block;
+}
+
+/*
+   * Add the correct display in all browsers.
+   */
+summary {
+  display: list-item;
+}
+
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+template {
+  display: none;
+}
+
+/**
+   * Add the correct display in IE 10.
+   */
+[hidden] {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
