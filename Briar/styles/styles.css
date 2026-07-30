@@ -1,0 +1,402 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Global */
+
+
+
+
+
+.body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    background-color: #EEEEEF;
+    position: relative;
+    z-index: 50;
+}
+
+
+
+
+/*backgrounds*/
+.background-sangre {
+    background-image: url('../images/Sangre.webp');
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-cover {
+    background-color: #eeeeeff8;
+    height: 100%;
+    width: 100%;
+    border-left: white 1px solid;
+    border-right: white 1px solid;
+}
+/*backgrounds*/
+
+
+
+
+
+
+/* Containers */
+.container {
+    box-shadow: 0 0 0 0.6px rgba(219, 211, 211, 0.6);
+}
+
+.container-main {
+    height: 7960px;
+    padding: 0 10vw;
+    position: relative;
+    z-index: 100;
+    background-color: #EEEEEF;
+}
+/* Containers */
+
+
+
+
+/*logo*/
+.logo {
+    top: -0.8%;
+    left: 3%;
+    width: 80px;
+    margin-right: auto;
+    position: absolute;
+    z-index: 5;
+}
+
+.logo-img {
+    height: 220px;
+}
+/*logo*/
+
+
+
+
+
+/* Nav */
+.nav {
+    background-color: #1F0F14;
+    padding: 0 40px;
+    height: 80px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.nav__list {
+    list-style-type: none;
+    margin: 26px;
+    padding: 0;
+    display: inline-block;
+}
+
+.nav__item {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.nav__item a {
+    text-decoration: none;
+    color: #FFD9DA;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.nav__item a:hover {
+    color: #00FFFF;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Nav */
+
+
+
+
+
+
+
+/* Parallax Effect */
+.parallax {
+    background-image: url('../images/BriarWallpaper.webp'); 
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130vh;
+    position: relative; 
+    z-index: 10;
+    font-family: 'BeaufortForLOL', sans-serif;
+}
+
+.parallax-text {
+    position: fixed;
+    top: 65%;
+    left: 10%;
+    color: #fff; 
+    text-align: left;
+    
+}
+
+.parallax__title {
+    font-size: 3rem; 
+    font-weight: 500;
+}
+
+.parallax__subtitle {
+    font-size: 6rem; 
+    font-weight: bold;
+}
+/* Parallax Effect */
+
+
+
+
+
+
+
+/* Estilo de la sección Historia */
+.historia {
+    padding: 14px 25px;
+    text-align: center; 
+
+}
+
+.historia-container {
+    height: 1840px;
+    margin: 20px auto 0 auto;
+    width: 1467px;
+    padding: 20px 115px;
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0px 0px 15px -6px rgba(0, 0, 0, 0.3);
+}
+
+.historia-img {
+    margin: 20px 0;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+.historia__title {
+    font-size: 2rem; 
+    margin: 20px 0;
+}
+
+.historia__text {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+    text-align: justify; 
+}
+/* Estilo de la sección Historia */
+
+
+
+
+
+
+
+/*habilidades*/
+.abilities-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 1519px;
+}
+
+.ability {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px;
+    width: 1469px; 
+    background-color: #fff;
+    box-shadow: 0px 0px 15px -6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: all 0.5s; 
+}
+
+.abilities-title {
+    width: 1517px;
+    font-size: 32px;
+    margin: 51px 0 0;
+    color: #FFF;
+    background-color: #1F0F14;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.ability:hover {
+    box-shadow: 0px 0px 25px -8px #E762A6;
+}
+
+.ability-info {
+    margin-top: 50px;
+    display: inline-block;
+    width: 39.6%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.ability__description {
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 0 57px;
+}
+
+.ability__image {
+    border: 2px solid #000;
+    margin: 30px;
+    width: 96px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.ability__video {
+    display: inline-block;
+    width: 881px;
+    max-width: 60%;
+    border-radius: 6px;
+    vertical-align: top;
+}
+/*habilidades*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Galería */
+.galeria {
+    text-align: center;
+    margin-bottom: 0;
+
+}
+
+.galeria__title {
+    margin: 50px auto 0;
+    font-size: 32px;
+    width: 1517px;
+    color: #FFF;
+    background-color: #1F0F14;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+
+.galeria-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    max-width: 1300px;
+    margin: 30px auto;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+}
+
+.galeria__image {
+    width: 100%;
+    height: 730px;
+    object-fit: cover; 
+    border-radius: 8px;
+    border: 2px solid #1F0F14;
+}
+
+.galeria__description {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+/* Galería */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer*/
+.footer {
+    background-color: #1F0F14;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #FFD9DA;
+    position: relative;
+    z-index: 100;
+}
+
+.footer__data {
+    margin-bottom: 20px;
+}
+
+.footer__photo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+
+.footer__sources h3 {
+    margin-bottom: 10px;
+}
+
+.footer__sources a {
+    color: #43f7f7;
+    text-decoration: none;
+}
+
+.footer__sources a:hover {
+    text-decoration: underline;
+}
+
+.footer__top {
+    margin-top: 70px;
+}
+
+.footer__button {
+    display: inline-block;
+    background-color: #FFD9DA;
+    color: #1F0F14;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.footer__button:hover {
+    background-color: #FFB6C1;
+}
+/* Footer*/
