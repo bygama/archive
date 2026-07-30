@@ -1,0 +1,44 @@
+[
+    {
+        "url": "abyssum",
+        "text": "Abyssum",
+        "title": "Abyssum: Pactos de Demonios",
+        "isInMenu": true
+    },
+    {
+        "url": "pacts",
+        "text": "Pacts",
+        "title": "Pacts",
+        "isInMenu": true
+    },
+    {
+        "url": "demons",
+        "text": "Entidades",
+        "title": "Entidades del Abismo",
+        "isInMenu": true
+    },
+    {
+        "url": "404",
+        "text": "Error 404",
+        "title": "Página no encontrada",
+        "isInMenu": false
+    },
+    {
+        "url": "enviado",
+        "text": "Formulario Enviado",
+        "title": "Formulario enviado con éxito", 
+        "isInMenu": false
+    },
+    {
+        "url": "alumno",
+        "text": "Alumno",
+        "title": "Datos del Alumno", 
+        "isInMenu": true
+    },              
+    {
+        "url": "404",
+        "text": "Error 404",
+        "title": "Página no encontrada", 
+        "isInMenu": false
+    }
+]
