@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGENDS.GG • Campeones</title>
+  <meta name="description" content="Explora el roster completo de campeones con filtros y búsqueda." />
+  <link rel="icon" type="image/x-icon" href="../assets/Logo-Legends.webp" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/x-icon" href="assets/Logo-Legends.webp" />
+	<link rel="apple-touch-icon" sizes="57x57" href="../assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="../manifest.json">
+</head>
+
+<body class="font-lexend bg-slate-900 text-slate-100 antialiased min-h-screen flex flex-col">
+  
+  <div id="offcanvas-overlay" class="lg:hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden"></div>
+  <!-- Sidebar -->
+  <aside id="app-sidebar" class="fixed top-0 left-0 h-screen z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 flex" tabindex="-1" aria-label="Barra lateral de navegación">
+    <div class="group flex flex-col h-full bg-slate-900/85 backdrop-blur border-r border-slate-700/50 shadow-xl w-60 lg:w-16 lg:hover:w-60 transition-all duration-300 overflow-hidden relative">
+      <button id="close-sidebar" aria-label="Cerrar menú" class="lg:hidden absolute top-3 right-3 p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700/70 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <a href="../index.html" class="flex items-center gap-3 p-4"><img src="../assets/Logo-Legends.webp" alt="Logo" class="w-8 h-8" /><span class="text-slate-100 font-semibold tracking-tight text-[17px] opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">LEGENDS.GG</span></a>
+      <div class="h-px bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent w-full lg:w-10 mx-auto lg:group-hover:w-full transition-all duration-500"></div>
+      <nav class="flex-1 px-2 space-y-1 mt-2" aria-label="Navegación principal">
+        <a data-nav="home" href="../index.html" class="nav-item relative flex items-center gap-3 rounded-lg p-2 py-2 text-slate-300 hover:text-white hover:bg-slate-700/60 transition"><span class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md bg-slate-800/60 text-indigo-400 nav-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 13v8h14v-8"/></svg></span><span class="text-sm font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">Inicio</span></a>
+        <a data-nav="champs" href="champs.html" class="nav-item relative flex items-center gap-3 rounded-lg p-2 py-2 text-slate-300 hover:text-white hover:bg-slate-700/60 transition"><span class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md bg-slate-800/60 text-indigo-400 nav-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z"/><path d="M21 3v5l-11 9l-4 4l-3 -3l4 -4l9 -11z" /><path d="M5 13l6 6" /><path d="M14.32 17.32l3.68 3.68l3 -3l-3.365 -3.365" /><path d="M10 5.5l-2 -2.5h-5v5l3 2.5" /></svg></span><span class="text-sm font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">Campeones</span></a>
+        <a data-nav="favorites" href="favorites.html" class="nav-item relative flex items-center gap-3 rounded-lg p-2 py-2 text-slate-300 hover:text-white hover:bg-slate-700/60 transition"><span class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md text-indigo-400 nav-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></span><span class="text-sm font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">Favoritos</span></a>
+      </nav>
+      <div class="p-2 mt-auto mb-10">
+        <a id="installBtn" class="nav-item relative flex items-center gap-3 rounded-lg p-2 bg-indigo-600/90 hover:bg-indigo-500 text-white transition"><span class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md text-indigo-100"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span><span class="text-sm font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">Descargar</span></a>
+        <div class="mt-2 h-px bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent w-full lg:w-10 mx-auto lg:group-hover:w-full transition-all duration-500"></div>
+        <div class="mt-3 mb-3 flex items-center gap-2 justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500"><span class="w-2 h-2 rounded-full bg-indigo-400/80 shadow-sm shadow-indigo-500/40 animate-pulse"></span><span class="text-[10px] tracking-wide text-slate-500 select-none text-nowrap">v1.0 • Stable</span></div>
+      </div>
+    </div>
+  </aside>
+  <!-- Topbar -->
+  <header id="mobile-topbar" class="lg:hidden fixed top-0 left-0 right-0 z-30 bg-slate-900/80 backdrop-blur border-b border-slate-700/50 h-14 flex items-center justify-between px-4 transition-transform duration-300 will-change-transform" role="banner"><div class="flex items-center gap-2"><img src="../assets/logo-Legends.webp" alt="Logo" class="w-9 h-9" /><span class="font-semibold text-slate-100 text-[17px]">LEGENDS.GG</span></div><button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" class="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5"><span class="bar h-0.5 w-6 bg-slate-200 rounded-full transition self-end"></span><span class="bar h-0.5 w-4 bg-slate-200 rounded-full transition self-end"></span></button></header>
+  <main class="flex-1 w-full transition-all duration-300 lg:ml-16 lg:w-[calc(100%-4rem)]">
+    
+    <section class="relative min-h-[320px] md:min-h-[380px] flex items-center overflow-hidden">
+      <div class="absolute inset-0 bg-[url('../assets/noxus-LEGENDSGG.webp')] bg-cover object-top bg-center"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/70 to-slate-900"></div>
+      <div class="relative max-w-7xl mx-auto px-6 md:px-14 lg:px-20 xl:px-24 py-16 w-full flex flex-col gap-10">
+        <div class="w-full">
+          <div class="grid gap-10 lg:gap-12 xl:gap-16 items-start
+            md:grid-cols-1
+            ">
+            <!-- Col 1: (queda vacío en md+ para centrar el buscador) -->
+            <div class="hidden md:block"></div>
+            <!-- Col 2: Buscador centrado + dropdowns -->
+            <div class="flex flex-col items-center text-center gap-5">
+              <form class="w-full max-w-md mt-20 md:mt-0" onsubmit="return false;" aria-label="Buscador de campeones">
+                <label for="search" class="sr-only">Buscar campeón</label>
+                <div class="relative group">
+                  <input id="search" type="text" placeholder="Buscar campeón favorito..." class="w-full rounded-xl bg-slate-900/70 border border-slate-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-slate-400 px-4 py-3 text-sm" />
+                  <span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 opacity-80 group-focus-within:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg>
+                  </span>
+                </div>
+              </form>
+              <div class="flex flex-wrap justify-center gap-3 w-full max-w-2xl" id="filters-bar">
+                <!-- Dropdown Rol -->
+                <div class="relative dropdown">
+                  <button type="button" class="dropdown-trigger w-[140px] flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-slate-800/70 border border-slate-600 text-[11px] font-medium tracking-wide text-slate-300 hover:bg-slate-700/70 transition" aria-expanded="false" aria-haspopup="true">Rol <svg class="w-3.5 h-3.5 opacity-70 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></button>
+                  <div class="dropdown-panel hidden absolute left-0 top-[110%] z-20 w-48 p-2 rounded-xl bg-slate-900/95 backdrop-blur border border-slate-600 shadow-xl flex flex-col gap-2" role="menu" aria-label="Filtrar por rol">
+                    <p class="px-2 pt-1 pb-0.5 text-[10px] uppercase tracking-wide text-slate-500">Roles</p>
+                    <div class="flex flex-wrap gap-1">
+                      <button class="filter-chip px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-role="Assassin" type="button">Assassin</button>
+                      <button class="filter-chip px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-role="Fighter" type="button">Fighter</button>
+                      <button class="filter-chip px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-role="Mage" type="button">Mage</button>
+                      <button class="filter-chip px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-role="Marksman" type="button">Marksman</button>
+                      <button class="filter-chip px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-role="Support" type="button">Support</button>
+                      <button class="filter-chip px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-role="Tank" type="button">Tank</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Dropdown Dificultad -->
+                <div class="relative dropdown">
+                  <button type="button" class="dropdown-trigger w-[140px] flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-slate-800/70 border border-slate-600 text-[11px] font-medium tracking-wide text-slate-300 hover:bg-slate-700/70 transition" aria-expanded="false" aria-haspopup="true">Dificultad <svg class="w-3.5 h-3.5 opacity-70 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></button>
+                  <div class="dropdown-panel hidden absolute left-0 top-[110%] z-20 w-40 p-2 rounded-xl bg-slate-900/95 backdrop-blur border border-slate-600 shadow-xl flex flex-col gap-1" role="menu" aria-label="Filtrar por dificultad">
+                    <p class="px-2 pt-1 pb-0.5 text-[10px] uppercase tracking-wide text-slate-500">Dificultad</p>
+                    <div class="flex flex-col gap-1">
+                      <button class="filter-chip w-full text-left px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-diff="low" type="button">Baja</button>
+                      <button class="filter-chip w-full text-left px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-diff="medium" type="button">Media</button>
+                      <button class="filter-chip w-full text-left px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-filter-diff="high" type="button">Alta</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Dropdown Orden -->
+                <div class="relative dropdown">
+                  <button type="button" class="dropdown-trigger w-[140px] flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-slate-800/70 border border-slate-600 text-[11px] font-medium tracking-wide text-slate-300 hover:bg-slate-700/70 transition" aria-expanded="false" aria-haspopup="true">Orden <svg class="w-3.5 h-3.5 opacity-70 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></button>
+                  <div class="dropdown-panel hidden absolute left-0 top-[110%] z-20 w-40 p-2 rounded-xl bg-slate-900/95 backdrop-blur border border-slate-600 shadow-xl flex flex-col gap-1" role="menu" aria-label="Ordenar resultados">
+                    <p class="px-2 pt-1 pb-0.5 text-[10px] uppercase tracking-wide text-slate-500">Ordenar por</p>
+                    <div class="flex flex-col gap-1">
+                      <button class="filter-chip w-full text-left px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-sort="name" type="button">Nombre</button>
+                      <button class="filter-chip w-full text-left px-2 py-1 rounded-lg bg-slate-800/70 text-[11px] text-slate-300 hover:bg-indigo-600/70 hover:text-white transition" data-sort="difficulty" type="button">Dificultad</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Clear filters -->
+              <div class="w-full flex justify-center mt-2 h-8 opacity-60">
+                <button type="button" id="clear-filters" class="inline-flex items-center gap-1.5 text-[11px] px-3 py-2 rounded-lg text-slate-400 hover:text-indigo-300 hover:border-indigo-500/60 hover:bg-slate-800/60 transition focus:outline-none group opacity-0 pointer-events-none scale-95 will-change-transform duration-200 ease-out border border-transparent">
+                  <svg class="w-3.5 h-3.5 opacity-60 group-hover:opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2V6"/><path d="M10 11l4 4m0 -4l-4 4"/></svg>
+                  Limpiar filtros
+                </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Grid -->
+    <section class="relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800/60 py-14 lg:py-20">
+      <div class="absolute inset-0 pointer-events-none [background:radial-gradient(circle_at_70%_20%,rgba(79,70,229,0.10),transparent_60%)]"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-14 lg:px-20 xl:px-24">
+        <div class="flex flex-col items-center text-center md:text-left md:flex-row md:items-center md:justify-between gap-4 mb-8">
+          <div>
+            <h2 class="text-2xl font-bold">Campeones favoritos</h2>
+            <p class="text-slate-500 text-xs mt-1">Paginados de 20.</p>
+          </div>
+          <button id="clear-all-favorites" type="button" class="mt-2 md:mt-0 inline-flex items-center gap-1.5 text-[11px] px-3 py-1.5 rounded-md bg-transparent text-slate-400 hover:text-rose-300 border border-transparent hover:border-rose-500/40 hover:bg-rose-500/10 transition font-medium" aria-label="Vaciar favoritos">
+            <svg class="w-3.5 h-3.5 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2V6"/><path d="M10 11l4 4m0 -4l-4 4"/></svg>
+            Vaciar favoritos
+          </button>
+        </div>
+        <div class="champs flex flex-wrap -m-2" aria-live="polite" aria-busy="false">
+          <!-- Champion cards  -->
+        </div>
+        <div class="mt-10 flex justify-center">
+          <button id="load-more" class="hidden px-5 py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 hover:border-indigo-500/60 transition flex items-center gap-2">Ver más <span class="text-xs text-slate-400" data-count></span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-slate-950/70 border-t border-slate-700/60 relative overflow-hidden lg:ml-16 lg:w-[calc(100%-4rem)]">
+		<div class="absolute inset-0 [background:radial-gradient(circle_at_20%_30%,rgba(99,102,241,.15),transparent_60%)]"></div>
+		<div class="max-w-7xl mx-auto px-6 md:px-14 lg:px-20 xl:px-24 py-14 relative">
+			<div class="grid md:grid-cols-4 gap-10">
+        <div class="space-y-4">
+          <a href="../index.html" class="flex items-center gap-2 font-semibold text-slate-100">
+            <img src="../assets/Logo-Legends.webp" alt="logo" class="w-10 h-10" />
+						<span>LEGENDS.GG</span>
+					</a>
+					<p class="text-sm text-slate-400 leading-relaxed">Explora, filtra y guarda tus campeones favoritos.</p>
+				</div>
+				<div>
+					<h4 class="text-sm font-semibold mb-4 tracking-wide text-slate-200">Secciones</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="../index.html" class="hover:text-slate-200 transition">Inicio</a></li>
+              <li><a href="champs.html" class="hover:text-slate-200 transition">Campeones</a></li>
+              <li><a href="favorites.html" class="hover:text-slate-200 transition">Favoritos</a></li>
+						</ul>
+				</div>
+				<div>
+					<h4 class="text-sm font-semibold mb-4 tracking-wide text-slate-200">Sobre nosotros</h4>
+					<ul class="space-y-2 text-sm text-slate-400">
+						<li>Creador</li>
+						<li>Contacto</li>
+						<li><a target="_blank" class="hover:text-slate-200 transition" href="https://developer.riotgames.com/docs/lol">API</a></li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-sm font-semibold mb-4 tracking-wide text-slate-200">Estado</h4>
+					<ul class="space-y-2 text-sm text-slate-400">
+						<li>Build: <span class="text-emerald-400">Estable</span></li>
+						<li>Última actualización: <span class="text-slate-300">2025</span></li>
+            <li id="footer-version">Versión API: —</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mt-12 pt-8 border-t border-slate-700/50 flex flex-col md:flex-row gap-4 items-center justify-between text-xs text-slate-500">
+				<p>&copy; 2025 LEGENDS.GG</p>
+			</div>
+		</div>
+	</footer>
+  
+  <div class="loader hidden" aria-hidden="true" role="status" aria-label="Cargando favoritos">
+    <div class="loader-core" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="sweep"></div>
+      <div class="glow"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script defer src="../js/burger-menu.js"></script>
+  <script defer src="../js/api.js"></script>
+  <script defer src="../js/script.js"></script>
+  <script src="../js/filters.js"></script>
+</body>
+</html>
