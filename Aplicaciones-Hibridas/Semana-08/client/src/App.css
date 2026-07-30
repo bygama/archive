@@ -1,0 +1,429 @@
+:root {
+  --bg: #0a0805;
+  --bg-2: #14100a;
+  --panel: #1d1810;
+  --border: #3a2f1d;
+  --text: #e8dcc4;
+  --muted: #8b7a5e;
+  --accent: #b89460;
+  --accent-strong: #f0c66b;
+  --danger: #b34b3a;
+  --ok: #5b8a4a;
+
+  --cat-weapon:    #6e3a2a;
+  --cat-accessory: #3a4a6e;
+  --cat-ammo:      #4a3624;
+  --cat-health:    #2e5a3a;
+  --cat-food:      #5b4a2a;
+  --cat-crafting:  #7a4626;
+  --cat-treasure:  #7a5a1a;
+  --cat-key:       #2a3e5b;
+}
+
+/* ============ Auth screen ============ */
+.auth-screen {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #1a140c 0%, #0a0805 60%, #000 100%);
+}
+.auth-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 36px 40px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+.auth-box h1 {
+  color: var(--accent-strong);
+  letter-spacing: 5px;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.auth-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.auth-form { display: flex; flex-direction: column; gap: 10px; }
+.auth-form input {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  outline: none;
+}
+.auth-form input:focus { border-color: var(--accent); }
+.auth-error {
+  background: rgba(179, 75, 58, 0.15);
+  border: 1px solid var(--danger);
+  color: #f5a99a;
+  padding: 8px;
+  font-size: 0.8rem;
+}
+.btn-primary {
+  background: var(--accent);
+  border: none;
+  color: #1a1208;
+  padding: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--accent-strong); }
+.btn-primary:disabled { background: var(--muted); cursor: wait; }
+.auth-switch {
+  background: none;
+  border: none;
+  color: var(--accent);
+  margin-top: 18px;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+.auth-switch:hover { color: var(--accent-strong); }
+
+/* ============ App shell ============ */
+.app-shell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  user-select: none;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+.topbar h1 {
+  color: var(--accent-strong);
+  letter-spacing: 6px;
+  font-size: 1.1rem;
+}
+.topbar-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.topbar-controls button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+.topbar-controls button:hover { border-color: var(--accent); }
+.case-info {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  padding: 0 8px;
+}
+.ptas {
+  color: var(--accent-strong);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0 12px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.user-tag {
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+
+.error-bar {
+  background: rgba(179, 75, 58, 0.2);
+  color: #f5a99a;
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--danger);
+}
+
+.loading {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+}
+
+/* ============ Layout ============ */
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  min-height: 0;
+}
+
+/* ============ Case pane ============ */
+.case-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: auto;
+  background: var(--bg);
+}
+/* La imagen real determina el tamaño del frame; el frame es inline-block
+   y shrink-fit al ancho/alto de la imagen. La imagen usa max-width/max-height
+   para que siempre quepa en su pane SIN deformarse. Las celdas y piezas son
+   absolute con % relativo al frame → calzan exacto sobre la imagen. */
+.case-frame {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+.case-img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* SVG overlay con la grilla trazada a mano. Posición y tamaño se setean
+   inline desde Briefcase.jsx (state.overlay, persistido en localStorage).
+   Se estira con preserveAspectRatio=none para encajar al área pintada. */
+.case-svg {
+  position: absolute;
+  overflow: visible;
+}
+.case-svg.calib {
+  outline: 1px dashed rgba(240, 198, 107, 0.6);
+}
+
+.cell-poly { pointer-events: none; }
+.case-svg.calib .cell-poly { pointer-events: none; }
+
+.piece-g { cursor: grab; }
+.piece-g:hover polygon { filter: brightness(1.25); }
+.piece-g.dragging { opacity: 0.3; }
+
+/* Modo calibración: outline + 4 handles arrastrables */
+.calib-outline {
+  position: absolute;
+  border: 2px dashed var(--accent-strong);
+  pointer-events: none;
+  z-index: 50;
+}
+.calib-handle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  background: var(--accent-strong);
+  border: 2px solid #1a1208;
+  border-radius: 50%;
+  z-index: 51;
+  cursor: grab;
+  box-shadow: 0 0 8px rgba(240, 198, 107, 0.6);
+}
+.calib-handle:active { cursor: grabbing; transform: scale(1.2); }
+
+.btn-active {
+  background: var(--accent) !important;
+  color: #1a1208 !important;
+  border-color: var(--accent-strong) !important;
+}
+
+/* .piece div ya no se usa — las piezas ahora son <g> dentro del SVG */
+.piece:hover { filter: brightness(1.2); }
+.piece.dragging { opacity: 0.25; }
+.piece-label {
+  font-size: 9px;
+  color: var(--text);
+  text-align: center;
+  text-shadow: 0 1px 2px #000;
+  word-break: break-word;
+  line-height: 1.05;
+}
+.piece-count {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-size: 11px;
+  color: var(--accent-strong);
+  text-shadow: 0 1px 2px #000;
+  font-weight: 600;
+}
+.piece.cat-weapon   { background: var(--cat-weapon); }
+.piece.cat-ammo     { background: var(--cat-ammo); }
+.piece.cat-health   { background: var(--cat-health); }
+.piece.cat-food     { background: var(--cat-food); }
+.piece.cat-treasure { background: var(--cat-treasure); }
+.piece.cat-key      { background: var(--cat-key); }
+
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.hint kbd {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  font-size: 10px;
+  border-radius: 2px;
+  color: var(--accent);
+}
+
+/* ============ Catalog pane ============ */
+.catalog-pane {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  min-height: 0;
+}
+.catalog-head {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.search {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  outline: none;
+  margin-bottom: 8px;
+}
+.search:focus { border-color: var(--accent); }
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.cat-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 4px 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.cat-btn.active {
+  background: var(--panel);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.catalog-grid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  align-content: start;
+}
+.cat-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 6px;
+  min-height: 110px;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  position: relative;
+  transition: border-color 0.1s;
+}
+.cat-item:hover { border-color: var(--accent); }
+.cat-item:active { cursor: grabbing; }
+.ci-thumb {
+  flex: 1;
+  min-height: 56px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ci-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+.ci-noicon {
+  font-size: 9px;
+  color: var(--muted);
+  text-align: center;
+  padding: 4px;
+  line-height: 1.1;
+}
+.cat-item.cat-weapon    { border-left: 3px solid var(--cat-weapon); }
+.cat-item.cat-accessory { border-left: 3px solid var(--cat-accessory); }
+.cat-item.cat-ammo      { border-left: 3px solid var(--cat-ammo); }
+.cat-item.cat-health    { border-left: 3px solid var(--cat-health); }
+.cat-item.cat-food      { border-left: 3px solid var(--cat-food); }
+.cat-item.cat-crafting  { border-left: 3px solid var(--cat-crafting); }
+.cat-item.cat-treasure  { border-left: 3px solid var(--cat-treasure); }
+.cat-item.cat-key       { border-left: 3px solid var(--cat-key); }
+
+.ci-dim {
+  font-size: 9px;
+  color: var(--accent);
+  letter-spacing: 1px;
+  align-self: flex-start;
+}
+.ci-name {
+  font-size: 10px;
+  color: var(--text);
+  line-height: 1.15;
+  text-align: center;
+  word-break: break-word;
+}
+.empty-hint {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ============ Ghost (drag preview) ============ */
+.ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  background: rgba(184, 148, 96, 0.3);
+  border: 1px solid var(--accent-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--accent-strong);
+  text-shadow: 0 1px 2px #000;
+  padding: 4px;
+  text-align: center;
+}
+.ghost.cat-weapon   { background: rgba(110, 58, 42, 0.6); }
+.ghost.cat-ammo     { background: rgba(74, 54, 36, 0.6); }
+.ghost.cat-health   { background: rgba(46, 90, 58, 0.6); }
+.ghost.cat-food     { background: rgba(91, 74, 42, 0.6); }
+.ghost.cat-treasure { background: rgba(122, 90, 26, 0.6); }
+.ghost.cat-key      { background: rgba(42, 62, 91, 0.6); }

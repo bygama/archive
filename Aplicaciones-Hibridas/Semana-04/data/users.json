@@ -1,0 +1,22 @@
+[
+  {
+    "name": "John Doe",
+    "email": "johnDoe@gmail.com",
+    "id": "de20fa33-82df-4fdb-9f07-d0946e59c9ac"
+  },
+  {
+    "name": "Maria Garcia",
+    "email": "mariaGarcia@gmail.com",
+    "id": "a1b2c3d4-5678-9101-1121-314151617181"
+  },
+  {
+    "name": "Carlos Lopez",
+    "email": "carlosLopez@gmail.com",
+    "id": "b2c3d4e5-6789-0112-2131-415161718192"
+  },
+  {
+    "name": "Jane Doe",
+    "email": "janeDoe@gmail.com",
+    "id": "ef271e66-2b98-4890-a4c2-c3c581350b74"
+  }
+]

@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.local
+
+# OMC / Claude Code artifacts (no son parte de la entrega)
+.claude/
+.omc/
+
+# Build outputs
+dist/
+build/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

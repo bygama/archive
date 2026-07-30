@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users API</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Users API</h1>
+      <p>API RESTful para gestión de usuarios. Permite registrar, autenticar y administrar usuarios mediante operaciones CRUD completas.</p>
+    </header>
+
+    <section class="section">
+      <h2>Endpoints</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Ruta</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="method get">GET</span></td>
+            <td>/api/users</td>
+            <td>Obtener todos los usuarios</td>
+          </tr>
+          <tr>
+            <td><span class="method get">GET</span></td>
+            <td>/api/users/:id</td>
+            <td>Obtener un usuario por ID</td>
+          </tr>
+          <tr>
+            <td><span class="method post">POST</span></td>
+            <td>/api/users/register</td>
+            <td>Registrar un nuevo usuario</td>
+          </tr>
+          <tr>
+            <td><span class="method post">POST</span></td>
+            <td>/api/users/login</td>
+            <td>Iniciar sesión (devuelve JWT)</td>
+          </tr>
+          <tr>
+            <td><span class="method delete">DELETE</span></td>
+            <td>/api/users/:id</td>
+            <td>Eliminar un usuario por ID</td>
+          </tr>
+          <tr>
+            <td><span class="method patch">PATCH</span></td>
+            <td>/api/users/:id/name</td>
+            <td>Actualizar nombre del usuario</td>
+          </tr>
+          <tr>
+            <td><span class="method patch">PATCH</span></td>
+            <td>/api/users/:id/email</td>
+            <td>Actualizar email del usuario</td>
+          </tr>
+          <tr>
+            <td><span class="method patch">PATCH</span></td>
+            <td>/api/users/:id/password</td>
+            <td>Actualizar contraseña del usuario</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Integrantes del equipo</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">👤</div>
+          <strong>Mateo Garcia</strong>
+          <p>Chairman</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Users API &mdash; Aplicaciones Híbridas &mdash; 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
